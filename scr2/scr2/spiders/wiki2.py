@@ -34,5 +34,5 @@ class Wiki2Spider(scrapy.Spider):
             yield response.follow(href, self.bookDetail)
             
 
-    def bookDetail(self, response):
-        print('-'*30)
+    def bookDetail(self, response): # 상세 페이지 크롤링
+        print(response.status, '-'*30)
