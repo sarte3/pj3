@@ -17,6 +17,7 @@ NEWSPIDER_MODULE = 'scr2.spiders'
 #USER_AGENT = 'scr2 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
+# 로봇.txt 따를 것인지
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -88,3 +89,4 @@ DOWNLOAD_DELAY = 1
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 FEED_EXPORT_ENCODING='utf-8'
+# 한글처리

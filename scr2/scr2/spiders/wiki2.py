@@ -35,4 +35,22 @@ class Wiki2Spider(scrapy.Spider):
             
 
     def bookDetail(self, response): # 상세 페이지 크롤링
-        print(response.status, '-'*30)
+        # print(response.status, '-'*30)
+        imgurl = response.css('div.col-md-3.single-cover > a > img::attr(src)').get()
+        title = response.css('#content > div:nth-child(1) > div.col-md-9 > h1::text').get()
+        filename = title+imgurl[-4:]
+        # scrapy.Request(url, 메서드)
+        req = scrapy.Request(imgurl, self.saveImg)
+        req.meta['filename'] = filename
+        yield req
+
+        # print(filename)
+        # author = response.css('#content div.col-md-9 > ul > li:nth-child(3)::text').get()
+        # print(imgurl, title, author)
+
+    
+    def saveImg(self, response):
+        # print(response.meta['filename'],'***')
+        fname = response.meta['filename']
+        with open(fname, 'wb') as f:
+            f.write(response.body)
