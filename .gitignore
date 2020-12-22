@@ -1,3 +1,9 @@
 scr2/scr2/__pycache__/settings.cpython-36.pyc
 scr2/scr2/spiders/__pycache__/wiki2.cpython-36.pyc
 scr2/scr2/spiders/__pycache__/movie.cpython-36.pyc
+scr2/scr2/__pycache__/__init__.cpython-38.pyc
+scr2/scr2/__pycache__/settings.cpython-38.pyc
+scr2/scr2/spiders/__pycache__/__init__.cpython-38.pyc
+scr2/scr2/spiders/__pycache__/movie.cpython-38.pyc
+scr2/scr2/spiders/__pycache__/movie1.cpython-38.pyc
+scr2/scr2/spiders/__pycache__/wiki2.cpython-38.pyc
