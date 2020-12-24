@@ -34,14 +34,18 @@ titlecnt = data.groupby('Title')['Rating'].size()
 r200 = titlecnt[titlecnt>=200]
 # print(r200)
 print(r200.index) # 평점 정보가 200건 이상 있는 영화 제목
+data = data.set_index('Title')
+print(data)
+data200 = data.loc[r200.index]
+print(data200)
 
 # tips 데이터에서 토, 일 데이터만 추출
-print('-'*30)
-import seaborn as sns
-tips = sns.load_dataset('tips')
+# print('-'*30)
+# import seaborn as sns
+# tips = sns.load_dataset('tips')
+# # print(tips)
+
+# tips = tips.set_index('day')
 # print(tips)
 
-tips = tips.set_index('day')
-print(tips)
-
-print(tips.loc[['Sun', 'Sat']])
+# print(tips.loc[['Sun', 'Sat']])
