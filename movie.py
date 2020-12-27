@@ -33,17 +33,47 @@ titlecnt = data.groupby('Title')['Rating'].size()
 # 평점 정보가 200건 이상 있는 영화
 r200 = titlecnt[titlecnt>=200]
 # print(r200)
-print(r200.index) # 평점 정보가 200건 이상 있는 영화 제목
+# print(r200.index) # 평점 정보가 200건 이상 있는 영화 제목
 data = data.set_index('Title')
-print(data)
+# print(data)
 data200 = data.loc[r200.index]
-print(data200)
+# print(data200)
+data200 = data200.reset_index()
+# print(data200)
 
-# tips 데이터에서 토, 일 데이터만 추출
-# print('-'*30)
+# 영화별 평균 평점
+print(data200.groupby('Title').Rating.mean())
+
+# 성별에 따른 평균평점
+print(data200.groupby(['Title', 'Gender']).Rating.mean())
+
+# 여성에게 높은 평점을 받은 영화 5
+s1 = data200.groupby(['Title', 'Gender']).Rating.mean()
+d1 = s1.reset_index()
+print(d1)
+d1 = d1[d1['Gender']=='F']
+print(d1)
+print(d1.sort_values(by='Rating', ascending=False).head(5))
+
+# # tips 데이터에서 토, 일 데이터만 추출
+# # print('-'*30)
 # import seaborn as sns
 # tips = sns.load_dataset('tips')
 # # print(tips)
+
+# # 요일별 식사 건수
+# g1 = tips.groupby('day').size()
+# print(g1)
+
+# # 식사 건수가 50건 이상인 데이터만 가지고 분석
+# g2 = g1[g1>50]
+# print(g2)
+# print(g2.index)
+# print(g2.values)
+
+# tips = tips.set_index('day')
+# print(tips)
+# print(tips.loc[g2.index])
 
 # tips = tips.set_index('day')
 # print(tips)
