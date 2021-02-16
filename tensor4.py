@@ -6,18 +6,18 @@ import matplotlib.pyplot as plt
 # ydata = [1,2,3]
 # w = tf.Variable(tf.random_normal([1]))
 # b = tf.Variable(tf.random_normal([1]))
-
+#
 # h = w * xdata + b
 # cost = tf.reduce_mean(tf.square(h-ydata))
 # train = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(cost)
-
+#
 # with tf.Session() as sess:
 #     sess.run(tf.global_variables_initializer())
 #     for i in range(2001):
 #         if i%100==0:
 #             print(i, sess.run(cost), sess.run(w), sess.run(b))
 #         sess.run(train)
-
+#
 
 # data = np.loadtxt('data/cars.csv', unpack=True, delimiter=',', skiprows=1)
 # # print(data)
@@ -36,7 +36,7 @@ import matplotlib.pyplot as plt
 #     sess.run(tf.global_variables_initializer())
 #     for i in range(2001):
 #         sess.run(train, feed_dict={x:data[0], y:data[1]})
-#         if i%100 == 0:
+#         if i % 100 == 0:
 #             print(sess.run([cost,w,b], feed_dict={x:data[0], y:data[1]}))
 #     # x가 20일 때 제동거리 예측
 #     # print('예측값', sess.run(h, feed_dict={x:20}))
